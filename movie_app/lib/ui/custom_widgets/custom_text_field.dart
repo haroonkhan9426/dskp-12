@@ -4,8 +4,9 @@ import 'package:movie_app/core/constants/styles.dart';
 class CustomTextField extends StatelessWidget {
   final titleText;
   final hintText;
+  final isHidePassword;
 
-  CustomTextField({this.titleText, this.hintText});
+  CustomTextField({this.titleText, this.hintText, this.isHidePassword = false});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class CustomTextField extends StatelessWidget {
             color: Colors.white,
           ),
           child: TextField(
+            obscureText: isHidePassword,
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: '$hintText',

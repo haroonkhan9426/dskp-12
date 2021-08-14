@@ -12,3 +12,8 @@ const textFieldHeadStyle = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.w500,
 );
+
+const bodyTextStyle = TextStyle(
+  color: secondaryColor,
+  fontSize: 12,
+);

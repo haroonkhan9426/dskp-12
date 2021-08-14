@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/constants/colors.dart';
 import 'package:movie_app/core/constants/styles.dart';
 import 'package:movie_app/ui/custom_widgets/custom_text_field.dart';
+import 'package:movie_app/ui/screens/movies_list_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -38,6 +39,8 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
 
+              SizedBox(height: 50),
+
               ///
               /// Email TextField sections
               ///
@@ -51,14 +54,23 @@ class LoginScreen extends StatelessWidget {
               CustomTextField(
                 titleText: 'Password',
                 hintText: 'Password here',
+                isHidePassword: true,
               ),
 
               SizedBox(height: 20),
 
               ElevatedButton(
-                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: darkYellowColor,
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MoviesListScreen()),
+                  );
+                },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 17),
+                  padding: const EdgeInsets.symmetric(vertical: 12),
                   child: Text('Login'),
                 ),
               )
